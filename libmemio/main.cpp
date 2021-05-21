@@ -26,6 +26,7 @@ THE SOFTWARE.
 #include <stdlib.h>
 #include <unistd.h>
 #include <time.h>
+#include <string.h>
 
 #include "libmemio.h"
 
@@ -78,7 +79,7 @@ int main (int argc, char** argv)
 	async_bdbm_req *temp_req=(async_bdbm_req*)malloc(sizeof(async_bdbm_req));
 	temp_req->type=REQTYPE_IO_WRITE;
 	temp_req->private_data=(void*)dma;
-	temp_req->end_req=end_req;
+	temp_req->end_req=end_req; //when the requset ends, the "end_req" is called
 
 	memio_write(mio, 0, 8192, (uint8_t*)dma->data, true, (void*)temp_req, dma->tag);
 
