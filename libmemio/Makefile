@@ -2,8 +2,10 @@
 #
 BD?=zcu102
 ifeq ($(BD),zcu102)
-CC = aarch64-linux-gnu-g++
-AR = aarch64-linux-gnu-ar
+CC = g++
+AR = ar
+#CC = aarch64-linux-gnu-g++
+#AR = aarch64-linux-gnu-ar
 BOARD = zcu102
 CONNECTAL_DIR = connectal_zcu102
 else

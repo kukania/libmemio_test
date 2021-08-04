@@ -73,8 +73,3 @@ bool memio_is_clean(memio_t *mio);
 /*for DMA allocation*/
 int memio_alloc_dma (int type, char** buf);
 void memio_free_dma (int type, int dmaTag);
-
-/*for lsmtree acceleration*/
-int memio_do_merge(unsigned int ht_num, unsigned lt_num, unsigned int *kt_num, unsigned int *inv_num, uint32_t dma_ppa);
-int memio_do_hw_read (memio_t* mio, uint32_t lba, char *key,uint16_t key_len, uint8_t* data, int async, void *req,int dmatag);
-int memio_release_merge(int, uint32_t *);
